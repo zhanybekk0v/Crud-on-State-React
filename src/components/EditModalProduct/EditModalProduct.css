@@ -1,0 +1,46 @@
+.main-modal {
+  position: absolute;
+  top: 900px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(173, 173, 143);
+}
+
+.inner-modal {
+  padding-top: 30px;
+  border-radius: 35px;
+  width: 600px;
+  height: 500px;
+  background-color: #fff;
+  margin: 150px auto;
+  text-align: center;
+  background-color: rgb(12, 12, 12);
+
+}
+.edit-place {
+  background-color: rgb(12, 12, 12);
+  width: 700px;
+  box-shadow: 12px 12px 2px 1px rgba(53, 53, 61, 0.2);
+
+}
+
+.edit-place-inp {
+  border-radius: 15px;
+  text-align: center;
+  background-color: rgb(12, 12, 12);
+  color: #C9C9C9;
+}
+
+.inp-edit {
+  border-radius: 15px;
+  outline: none;
+  text-align: center;
+  background-color: rgb(12, 12, 12);
+  margin-top: 50px;
+  margin-right: 20px;
+  width: 278px;
+  height: 25px;
+  border: none;
+  border-bottom: 2px solid rgb(173, 173, 143);
+}

@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import AddProduct from './components/AddProduct/AddProduct'
+import Header from './components/Navbar/Header'
+import './App.css'
+import ProductList from './components/ProductList/ProductList'
+import EditModalProduct from './components/EditModalProduct/EditModalProduct'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  const [todos , setTodos] = useState([])
+  const [modal, setModal] = useState(false)
+  const [editTodo, setEditTodo] = useState({})
+//TODO функция добавление
+  function handleProduct (newObj){
+    const newTodos =[...todos]
+    newTodos.push(newObj)
+    setTodos(newTodos)
+  }
+  //TODO функция удаление
+
+  function handleDelete(id) {
+    const newTodos = todos.filter((item) => item.id !== id)
+    setTodos(newTodos) 
+  }
+//TODO функция вызова модального окна
+function handleEdit(index) {
+  setModal(true)
+  setEditTodo(todos[index])
+
 }
 
-export default App;
+function handleClose() {
+  setModal(false);
+}
+
+function handleSaveProduct(newTodos){
+  const newContacts = todos.map((item) => {
+    if(item.id === newTodos.id){
+      return newTodos
+    }
+    return item
+  })
+  setTodos(newContacts)
+  handleClose()
+}
+  return (
+    <div className='wrapper'>
+      <Header />
+
+      <AddProduct handleProduct={handleProduct} />
+      <ProductList handleDelete={handleDelete} handleEdit={handleEdit} todos={todos} />
+      {modal ? (<EditModalProduct handleSaveProduct={handleSaveProduct}  editTodo={editTodo} handleClose={handleClose} />) : (null)}
+    </div>
+  )
+}
+
+export default App

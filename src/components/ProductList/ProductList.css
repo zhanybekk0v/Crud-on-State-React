@@ -1,0 +1,40 @@
+.cards {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5%;
+  height: 100%;
+}
+.wrap {
+  margin: 25px 0;
+  text-align: center ;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color:rgb(173, 173, 143);
+  border-radius: 15px;
+}
+.wrap-card {
+  margin-top: 25px;
+  width: 400px;
+  height: 600px;
+  border-radius: 15px;
+}
+.wrap-card-img {
+  margin-top: 20px;
+  width: 350px;
+  height: 300px;
+  border-radius: 15px;
+}
+.btn {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+.cards-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.cards-number {
+  margin-bottom: 20px;
+}
